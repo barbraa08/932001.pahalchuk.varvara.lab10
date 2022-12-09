@@ -1,0 +1,258 @@
+body {
+	overflow: hidden;
+	margin: 0;
+	height: 100%;
+}
+.flex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+* {
+	user-select: none;
+}
+@keyframes upCurtain {
+	100% {
+		background-position: center bottom 5vh;
+	}
+}
+@keyframes downCurtain {
+	0% {
+		background-position: center bottom 5vh;
+	}
+}
+@keyframes upped {
+	100% {
+		bottom: 100%;
+	}
+}
+.curtain {
+	z-index: 6;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	background-image: url(1.jpg);
+	background-size: cover;
+	background-position: center bottom;
+	background-repeat: repeat-x;
+}
+.upped {
+	animation-name: upped, upCurtain;
+	animation-duration: 2s, 0.2s;
+	animation-iteration-count: 1, 1;
+	animation-fill-mode: forwards, forwards;
+}
+.move {
+	animation-name: downCurtain;
+	animation-iteration-count: 1;
+	animation-duration: 0.2s;
+}
+.move:hover {
+	animation-name: upCurtain;
+	animation-iteration-count: 1;
+	animation-duration: 0.2s;
+	animation-fill-mode: forwards;
+}
+.lamps {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.lamp {
+	position: relative;
+	margin-top: 100px;
+}
+.lamp1 {
+	width: 300px;
+	height: 49px;
+	background: url(3.png) 0 -36.5px;
+	z-index: 4;
+	position: relative;
+	background-size: 300px;
+}
+.lamp2 {
+	width: 30px;
+	height: 160px;
+	background: url(3.png) 165px -85.5px;
+	position: absolute;
+	left: 135px;
+	z-index: 2;
+	background-size: 300px;
+}
+.lamp3 {
+	width: 30px;
+	height: 40px;
+	background: url(3.png) 195px -85.5px;
+	position: absolute;
+	left: 105px;
+	z-index: 2;
+	background-size: 300px;
+}
+.lamp4 {
+	width: 30px;
+	height: 160px;
+	background: url(3.png) 195px -85.5px;
+	position: relative;
+	left: 105px;
+	top: 0;
+	z-index: 2;
+	background-size: 300px;
+}
+.lamp5 {
+	width: 300px;
+	height: 49.5px;
+	background: url(3.png) 0 -250.5px;
+	position: relative;
+	z-index: 2;
+	background-size: 300px;
+}
+.lamp6 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 250px;
+	z-index: 4;
+}
+@keyframes lamp4-turnon {
+	100% {
+		top: 20px;
+	}
+}
+@keyframes lamp4-turnoff {
+	0% {
+		top: 20px;
+	}
+}
+.lamp > .lamp4 {
+	animation-name: lamp4-turnoff;
+	animation-iteration-count: 1;
+	animation-duration: 0.1s;
+}
+.onmousedown > .lamp4 {
+	animation-name: lamp4-turnon;
+	animation-iteration-count: 1;
+	animation-duration: 0.1s;
+	animation-fill-mode: forwards;
+}
+.light {
+	align-self: center;
+	position: relative;
+	width: 40px;
+	height: 0;
+	border: 340px solid #000000;
+	border-bottom-color: #fff380;
+	transform: scaleY(2.3);
+	opacity: 0.5;
+	top: -598px;
+	left: 1px;
+	z-index: 3;
+}
+.wizard {
+	height: 170px;
+	width: 210px;
+	background-image: url(2.jpg);
+	position: relative;
+	background-size: contain;
+	z-index: 2;
+}
+.container {
+	bottom: 3vh;
+	position: absolute;
+	display: flex;
+	align-items:center;
+	width: 60vh;
+	justify-content: space-between;
+}
+.magichat {
+	position: relative;
+}
+.magichat > .hat {
+	height: 160px;
+	width: 145px;
+	position: relative;
+	background-size: auto;
+}
+.magichat > .hat > div:first-child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	background-image: url("hat.png");
+	background-size: cover;
+	z-index: 2;
+}
+.magichat > .hat > div:last-child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	z-index: 4;
+}
+@keyframes animal-up {
+	100% {
+		top: -150px;
+	}
+}
+
+@keyframes animal-down {
+	0% {
+		top: -150px;
+	}
+}
+.magichat > .animal {
+	height: 70px;
+	width: 70px;
+	position: absolute;
+	top: 50px;
+	left: 35px;
+	background-size: auto;
+}
+.animalup > div:first-child {
+	animation-name: animal-up;
+	animation-fill-mode: forwards;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+}
+.animaldown > div:first-child {
+	animation-name: animal-down;
+	animation-fill-mode: forwards;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+}
+.magichat > .animal > div:first-child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	background-size: cover;
+	z-index: 1;
+}
+.magichat > .animal > div:last-child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	z-index: 4;
+}
+
+.bunny > div:first-child {
+	background-image: url("bunny.png");
+}
+
+.pigeon > div:first-child {
+	background-image: url("pigeon.png");
+}
+.backgr {
+	position: fixed;
+	top: 0;
+	z-index: 0;
+	width: 100%;
+	height:100%;
+	background-color: black;
+}
